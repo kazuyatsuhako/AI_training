@@ -1,0 +1,248 @@
+# GitHubアップロード完全マニュアル
+
+## AI思考トレーニング用（毎日使う版）
+
+---
+
+# 🎯 目的
+
+このドキュメントは、
+
+- 毎日作成した `.md` ファイルを
+- ローカルPCから
+- GitHubへ確実に保存する
+
+ための「実戦用手順書」である。
+
+チャットを遡る必要はない。
+このファイルだけ見れば完結する。
+
+---
+
+# 🔰 初回のみ必要な設定（※一度だけ）
+
+## ① 作業フォルダを作る
+
+```bash
+mkdir AI_training
+cd AI_training
+````
+
+---
+
+## ② Gitを初期化
+
+```bash
+git init
+```
+
+意味：
+このフォルダを「Git管理対象」にする。
+
+---
+
+## ③ GitHubでリポジトリを作成
+
+GitHub → New repository
+名前例：`AI_training`
+READMEは作らない。
+
+---
+
+## ④ GitHubと接続
+
+```bash
+git remote add origin https://github.com/あなたのID/AI_training.git
+```
+
+意味：
+ローカルとGitHubを紐づける。
+
+---
+
+## ⑤ ブランチ名をmainに統一
+
+```bash
+git branch -M main
+```
+
+---
+
+## ⑥ 初回アップロード
+
+```bash
+git push -u origin main
+```
+
+これで接続完了。
+以降この設定は不要。
+
+---
+
+# 🔁 毎日やる手順（Day2以降）
+
+## ① 作業フォルダにいることを確認
+
+```bash
+pwd
+```
+
+`AI_training` フォルダ内にいることを確認。
+
+---
+
+## ② 今日のファイルを確認
+
+```bash
+ls
+```
+
+今日作った `.md` が表示されることを確認。
+
+---
+
+## ③ Gitの状態確認
+
+```bash
+git status
+```
+
+ここで見ること：
+
+* `Untracked files:` に今日のファイルがある
+* または `modified:` が表示される
+
+これは「まだ保存されていない変更」がある状態。
+
+---
+
+## ④ 変更を登録（ステージング）
+
+```bash
+git add .
+```
+
+意味：
+変更を「保存対象」にする。
+
+まだ正式保存ではない。
+
+---
+
+## ⑤ コミット（履歴に刻む）
+
+```bash
+git commit -m "Day◯ 内容説明"
+```
+
+例：
+
+```bash
+git commit -m "Day2 分解トレーニング追加"
+```
+
+意味：
+今日の変更にタイトルをつけて記録する。
+
+ここまででローカル保存完了。
+
+---
+
+## ⑥ GitHubへ送信（プッシュ）
+
+```bash
+git push
+```
+
+意味：
+ローカルの履歴をクラウドへ送る。
+
+これでオンライン保存完了。
+
+---
+
+# 🧠 コマンドの意味まとめ
+
+| コマンド       | 何をしているか | 本質        |
+| ---------- | ------- | --------- |
+| git status | 現在の変更確認 | 自分の作業を観察  |
+| git add    | 変更を登録   | 保存候補に載せる  |
+| git commit | 履歴確定    | 思考に名前をつける |
+| git push   | クラウド送信  | 思考を資産化    |
+
+---
+
+# 🔧 日本語ファイル名の表示対策（任意）
+
+```bash
+git config --global core.quotepath false
+```
+
+---
+
+# 🚨 エラー対処
+
+## ❗ fatal: not a git repository
+
+```bash
+git init
+```
+
+まだ初期化されていない。
+
+---
+
+## ❗ remote origin not found
+
+GitHubと接続していない。
+
+```bash
+git remote add origin https://github.com/あなたのID/AI_training.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
+# 📌 毎日使う最短コマンド
+
+```bash
+git status
+git add .
+git commit -m "Day◯ 内容"
+git push
+```
+
+---
+
+# 🔥 本質
+
+あなたは今、
+
+コードではなく
+思考をバージョン管理している。
+
+これは単なる作業ではない。
+知的資産の蓄積である。
+
+このファイルだけ見れば、毎日迷わない。
+
+```
+
+---
+
+ファイル名はこれがいい。
+
+```
+
+github_upload_manual.md
+
+```
+
+保存 → add → commit → push。
+
+これで「チャット依存」から卒業。
+
+今日は仕組みを1つ完成させた。  
+かなり良い流れだよ。
+```
